@@ -1,0 +1,288 @@
+{
+  "results": [
+    {
+      "name": "M_raw",
+      "train_acc": 0.5086666666666667,
+      "test_acc": 0.468,
+      "train_time_s": 2.2142879962921143,
+      "delay": 1,
+      "seed": 0
+    },
+    {
+      "name": "M_past_only",
+      "train_acc": 0.776,
+      "test_acc": 0.726,
+      "train_time_s": 2.304900646209717,
+      "delay": 1,
+      "seed": 0
+    },
+    {
+      "name": "M_past_etta",
+      "train_acc": 0.9993333333333333,
+      "test_acc": 1.0,
+      "train_time_s": 2.727034330368042,
+      "delay": 1,
+      "seed": 0
+    },
+    {
+      "name": "M_raw",
+      "train_acc": 0.5166666666666667,
+      "test_acc": 0.512,
+      "train_time_s": 2.0386641025543213,
+      "delay": 1,
+      "seed": 1
+    },
+    {
+      "name": "M_past_only",
+      "train_acc": 0.9993333333333333,
+      "test_acc": 1.0,
+      "train_time_s": 2.1012635231018066,
+      "delay": 1,
+      "seed": 1
+    },
+    {
+      "name": "M_past_etta",
+      "train_acc": 0.9993333333333333,
+      "test_acc": 1.0,
+      "train_time_s": 2.9598493576049805,
+      "delay": 1,
+      "seed": 1
+    },
+    {
+      "name": "M_raw",
+      "train_acc": 0.514,
+      "test_acc": 0.478,
+      "train_time_s": 2.03490948677063,
+      "delay": 1,
+      "seed": 2
+    },
+    {
+      "name": "M_past_only",
+      "train_acc": 1.0,
+      "test_acc": 1.0,
+      "train_time_s": 2.175983190536499,
+      "delay": 1,
+      "seed": 2
+    },
+    {
+      "name": "M_past_etta",
+      "train_acc": 1.0,
+      "test_acc": 1.0,
+      "train_time_s": 2.6343612670898438,
+      "delay": 1,
+      "seed": 2
+    },
+    {
+      "name": "M_raw",
+      "train_acc": 0.52,
+      "test_acc": 0.5,
+      "train_time_s": 2.1451330184936523,
+      "delay": 2,
+      "seed": 0
+    },
+    {
+      "name": "M_past_only",
+      "train_acc": 0.9986666666666667,
+      "test_acc": 1.0,
+      "train_time_s": 2.3190629482269287,
+      "delay": 2,
+      "seed": 0
+    },
+    {
+      "name": "M_past_etta",
+      "train_acc": 0.9986666666666667,
+      "test_acc": 1.0,
+      "train_time_s": 2.794046640396118,
+      "delay": 2,
+      "seed": 0
+    },
+    {
+      "name": "M_raw",
+      "train_acc": 0.5113333333333333,
+      "test_acc": 0.498,
+      "train_time_s": 2.4114792346954346,
+      "delay": 2,
+      "seed": 1
+    },
+    {
+      "name": "M_past_only",
+      "train_acc": 0.9306666666666666,
+      "test_acc": 0.92,
+      "train_time_s": 2.4736413955688477,
+      "delay": 2,
+      "seed": 1
+    },
+    {
+      "name": "M_past_etta",
+      "train_acc": 0.9993333333333333,
+      "test_acc": 0.998,
+      "train_time_s": 2.8812742233276367,
+      "delay": 2,
+      "seed": 1
+    },
+    {
+      "name": "M_raw",
+      "train_acc": 0.504,
+      "test_acc": 0.53,
+      "train_time_s": 2.220623016357422,
+      "delay": 2,
+      "seed": 2
+    },
+    {
+      "name": "M_past_only",
+      "train_acc": 1.0,
+      "test_acc": 1.0,
+      "train_time_s": 2.3006722927093506,
+      "delay": 2,
+      "seed": 2
+    },
+    {
+      "name": "M_past_etta",
+      "train_acc": 1.0,
+      "test_acc": 1.0,
+      "train_time_s": 2.8481693267822266,
+      "delay": 2,
+      "seed": 2
+    },
+    {
+      "name": "M_raw",
+      "train_acc": 0.5273333333333333,
+      "test_acc": 0.48,
+      "train_time_s": 2.06288743019104,
+      "delay": 3,
+      "seed": 0
+    },
+    {
+      "name": "M_past_only",
+      "train_acc": 0.9986666666666667,
+      "test_acc": 1.0,
+      "train_time_s": 2.0850048065185547,
+      "delay": 3,
+      "seed": 0
+    },
+    {
+      "name": "M_past_etta",
+      "train_acc": 0.9986666666666667,
+      "test_acc": 1.0,
+      "train_time_s": 2.626067638397217,
+      "delay": 3,
+      "seed": 0
+    },
+    {
+      "name": "M_raw",
+      "train_acc": 0.5066666666666667,
+      "test_acc": 0.464,
+      "train_time_s": 2.146696090698242,
+      "delay": 3,
+      "seed": 1
+    },
+    {
+      "name": "M_past_only",
+      "train_acc": 0.9986666666666667,
+      "test_acc": 0.998,
+      "train_time_s": 2.201772451400757,
+      "delay": 3,
+      "seed": 1
+    },
+    {
+      "name": "M_past_etta",
+      "train_acc": 0.9986666666666667,
+      "test_acc": 0.998,
+      "train_time_s": 2.5809998512268066,
+      "delay": 3,
+      "seed": 1
+    },
+    {
+      "name": "M_raw",
+      "train_acc": 0.5013333333333333,
+      "test_acc": 0.51,
+      "train_time_s": 2.159639596939087,
+      "delay": 3,
+      "seed": 2
+    },
+    {
+      "name": "M_past_only",
+      "train_acc": 1.0,
+      "test_acc": 0.998,
+      "train_time_s": 2.16593074798584,
+      "delay": 3,
+      "seed": 2
+    },
+    {
+      "name": "M_past_etta",
+      "train_acc": 1.0,
+      "test_acc": 0.998,
+      "train_time_s": 2.5187973976135254,
+      "delay": 3,
+      "seed": 2
+    }
+  ],
+  "summary": {
+    "1": {
+      "M_past_etta": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n_seeds": 3
+      },
+      "M_past_only": {
+        "mean": 0.9086666666666666,
+        "std": 0.1291648386967427,
+        "n_seeds": 3
+      },
+      "M_raw": {
+        "mean": 0.486,
+        "std": 0.018832595855767378,
+        "n_seeds": 3
+      }
+    },
+    "2": {
+      "M_past_etta": {
+        "mean": 0.9993333333333334,
+        "std": 0.0009428090415820641,
+        "n_seeds": 3
+      },
+      "M_past_only": {
+        "mean": 0.9733333333333333,
+        "std": 0.03771236166328251,
+        "n_seeds": 3
+      },
+      "M_raw": {
+        "mean": 0.5093333333333333,
+        "std": 0.014636332266733446,
+        "n_seeds": 3
+      }
+    },
+    "3": {
+      "M_past_etta": {
+        "mean": 0.9986666666666667,
+        "std": 0.0009428090415820641,
+        "n_seeds": 3
+      },
+      "M_past_only": {
+        "mean": 0.9986666666666667,
+        "std": 0.0009428090415820641,
+        "n_seeds": 3
+      },
+      "M_raw": {
+        "mean": 0.48466666666666663,
+        "std": 0.019067132861433453,
+        "n_seeds": 3
+      }
+    }
+  },
+  "config": {
+    "delays": [
+      1,
+      2,
+      3
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "n_train": 1500,
+    "n_test": 500,
+    "epochs": 15
+  }
+}

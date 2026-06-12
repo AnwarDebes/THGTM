@@ -1,0 +1,33 @@
+{
+  "results": [
+    {
+      "seed": 0,
+      "test_acc_clean": 1.0,
+      "train_time_s": 5.875776767730713
+    },
+    {
+      "seed": 1,
+      "test_acc_clean": 1.0,
+      "train_time_s": 6.046144008636475
+    },
+    {
+      "seed": 2,
+      "test_acc_clean": 1.0,
+      "train_time_s": 5.592351913452148
+    },
+    {
+      "seed": 3,
+      "test_acc_clean": 1.0,
+      "train_time_s": 5.875616788864136
+    },
+    {
+      "seed": 4,
+      "test_acc_clean": 0.858,
+      "train_time_s": 5.500727653503418
+    }
+  ],
+  "summary": {
+    "mean": 0.9715999999999999,
+    "std": 0.05680000000000001
+  }
+}

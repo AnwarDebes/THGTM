@@ -1,0 +1,95 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="THGTM banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#07131a"/>
+      <stop offset="1" stop-color="#0d2029"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="320" rx="16" fill="url(#bg)"/>
+  <rect x="1.5" y="1.5" width="1197" height="317" rx="15" fill="none" stroke="#2dd4bf" stroke-opacity="0.22" stroke-width="3"/>
+
+  <!-- wordmark -->
+  <text x="60" y="100" font-family="Segoe UI, Helvetica, Arial, sans-serif"
+        font-size="58" font-weight="800" letter-spacing="1">
+    <tspan fill="#2dd4bf">THG</tspan><tspan fill="#f3f7f5">TM</tspan>
+  </text>
+  <text x="63" y="130" font-family="Segoe UI, Helvetica, Arial, sans-serif"
+        font-size="12" fill="#5e8a96" letter-spacing="1.2">TEMPORAL HIERARCHICAL GRAPH TSETLIN MACHINE</text>
+  <text x="63" y="172" font-family="Segoe UI, Helvetica, Arial, sans-serif"
+        font-size="21" fill="#cfe9e4">Each step looks innocent.</text>
+  <text x="63" y="200" font-family="Segoe UI, Helvetica, Arial, sans-serif"
+        font-size="21" fill="#cfe9e4">The trajectory doesn't.</text>
+
+  <!-- footer -->
+  <text x="60" y="293" font-family="Segoe UI, Helvetica, Arial, sans-serif"
+        font-size="12.5" fill="#4f7682" letter-spacing="1">ECHO-TRACE AUTOMATA &#183; BOUNDED-LTL LITERALS &#183; CNF + HMAC RECEIPTS</text>
+
+  <!-- ===== agent trajectory timeline ===== -->
+  <!-- per-step monitor checks -->
+  <g stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M 483 106 l 5 5 l 9 -10"/>
+    <path d="M 583 106 l 5 5 l 9 -10"/>
+    <path d="M 683 106 l 5 5 l 9 -10"/>
+    <path d="M 783 106 l 5 5 l 9 -10"/>
+    <path d="M 883 106 l 5 5 l 9 -10"/>
+    <path d="M 983 106 l 5 5 l 9 -10"/>
+    <path d="M 1083 106 l 5 5 l 9 -10"/>
+  </g>
+
+  <!-- timeline -->
+  <line x1="470" y1="145" x2="1130" y2="145" stroke="#2dd4bf" stroke-opacity="0.35" stroke-width="2"/>
+
+  <!-- echo traces (fading ghosts to the past) -->
+  <g fill="none" stroke="#2dd4bf">
+    <circle cx="568" cy="145" r="13" stroke-opacity="0.18" stroke-width="2"/>
+    <circle cx="550" cy="145" r="13" stroke-opacity="0.08" stroke-width="2"/>
+    <circle cx="668" cy="145" r="13" stroke-opacity="0.18" stroke-width="2"/>
+    <circle cx="650" cy="145" r="13" stroke-opacity="0.08" stroke-width="2"/>
+    <circle cx="768" cy="145" r="13" stroke-opacity="0.18" stroke-width="2"/>
+    <circle cx="750" cy="145" r="13" stroke-opacity="0.08" stroke-width="2"/>
+    <circle cx="868" cy="145" r="13" stroke-opacity="0.18" stroke-width="2"/>
+    <circle cx="850" cy="145" r="13" stroke-opacity="0.08" stroke-width="2"/>
+    <circle cx="968" cy="145" r="13" stroke-opacity="0.18" stroke-width="2"/>
+    <circle cx="950" cy="145" r="13" stroke-opacity="0.08" stroke-width="2"/>
+    <circle cx="1068" cy="145" r="13" stroke-opacity="0.18" stroke-width="2"/>
+    <circle cx="1050" cy="145" r="13" stroke-opacity="0.08" stroke-width="2"/>
+  </g>
+
+  <!-- step nodes -->
+  <g fill="#0e2832" stroke="#2dd4bf" stroke-width="2.5">
+    <circle cx="490" cy="145" r="13"/>
+    <circle cx="590" cy="145" r="13"/>
+    <circle cx="690" cy="145" r="13"/>
+    <circle cx="790" cy="145" r="13"/>
+    <circle cx="890" cy="145" r="13"/>
+    <circle cx="990" cy="145" r="13"/>
+  </g>
+  <circle cx="1090" cy="145" r="13" fill="#2b1216" stroke="#f87171" stroke-width="2.5"/>
+
+  <!-- action labels -->
+  <g font-family="Courier New, monospace" font-size="11" fill="#5e8a96" text-anchor="middle">
+    <text x="490" y="176">browse</text>
+    <text x="590" y="176">read</text>
+    <text x="690" y="176">note</text>
+    <text x="790" y="176">fetch</text>
+    <text x="890" y="176">copy</text>
+    <text x="990" y="176">encode</text>
+    <text x="1090" y="176" fill="#f87171">send</text>
+  </g>
+
+  <!-- bounded-LTL temporal window bracket -->
+  <g stroke="#fbbf24" stroke-width="2" fill="none">
+    <line x1="660" y1="196" x2="660" y2="206"/>
+    <line x1="660" y1="206" x2="1120" y2="206"/>
+    <line x1="1120" y1="196" x2="1120" y2="206"/>
+  </g>
+  <text x="890" y="228" text-anchor="middle" font-family="Courier New, monospace"
+        font-size="13" fill="#fbbf24">SINCE(sensitive_read, &#33;approval)</text>
+
+  <!-- verdict chips -->
+  <rect x="470" y="248" width="232" height="30" rx="15" fill="none" stroke="#f87171" stroke-width="2"/>
+  <text x="586" y="268" text-anchor="middle" font-family="Courier New, monospace" font-size="13" fill="#f87171">per-step:&#160;&#160;&#160;ASR 0.687</text>
+  <rect x="848" y="248" width="282" height="30" rx="15" fill="#123226" stroke="#4ade80" stroke-width="2"/>
+  <text x="989" y="268" text-anchor="middle" font-family="Courier New, monospace" font-size="13" fill="#4ade80">trajectory: ASR 0.000 BLOCKED</text>
+</svg>
