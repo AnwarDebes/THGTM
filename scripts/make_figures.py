@@ -189,19 +189,20 @@ def fig_trace_dynamics():
 # Figure: architecture schematic (ASCII -> matplotlib text rendering)
 # ---------------------------------------------------------------- #
 def fig_architecture():
-    fig, ax = plt.subplots(figsize=(5.5, 3.4))
+    fig, ax = plt.subplots(figsize=(7.4, 3.8))
     ax.axis("off")
-    # Boxes
+    # Boxes: (label, x, y, w, h, color).  Labels are wrapped to stay inside the
+    # box, and the columns are spaced so nothing overlaps a neighbour.
     boxes = [
-        ("Input stream $x_t$",       0.05, 0.78, 0.18, 0.12, "#ddd"),
+        ("Input stream $x_t$",            0.02, 0.74, 0.15, 0.12, "#ddd"),
         ("Temporal literal\nencoder\n(PAST$_k$, SINCE,\nALWAYS$_w$)",
-                                     0.27, 0.72, 0.20, 0.22, "#cfe6f7"),
-        ("Layer 1: ETTA + clauses",  0.51, 0.78, 0.22, 0.12, "#fde2e1"),
-        ("Layer 2: ETTA + clauses",  0.51, 0.55, 0.22, 0.12, "#fde2e1"),
+                                          0.21, 0.67, 0.18, 0.26, "#cfe6f7"),
+        ("Layer 1:\nETTA + clauses",      0.45, 0.74, 0.22, 0.12, "#fde2e1"),
+        ("Layer 2:\nETTA + clauses",      0.45, 0.52, 0.22, 0.12, "#fde2e1"),
         ("Per-class top banks\n(vote sums -> class)",
-                                     0.51, 0.32, 0.22, 0.16, "#fff5cc"),
+                                          0.45, 0.28, 0.22, 0.16, "#fff5cc"),
         ("Trajectory receipt\n(per-step CNF + LTL)",
-                                     0.78, 0.55, 0.18, 0.20, "#dbf3d9"),
+                                          0.73, 0.50, 0.25, 0.20, "#dbf3d9"),
     ]
     for txt, x, y, w, h, c in boxes:
         ax.add_patch(plt.Rectangle((x, y), w, h, facecolor=c, edgecolor="black",
@@ -211,14 +212,14 @@ def fig_architecture():
     def arr(x0, y0, x1, y1):
         ax.annotate("", xy=(x1, y1), xytext=(x0, y0),
                     arrowprops=dict(arrowstyle="->", linewidth=1.0))
-    arr(0.23, 0.84, 0.27, 0.83)
-    arr(0.47, 0.83, 0.51, 0.84)
-    arr(0.62, 0.78, 0.62, 0.67)               # L1 -> L2
-    arr(0.62, 0.55, 0.62, 0.48)               # L2 -> class head
-    arr(0.73, 0.61, 0.78, 0.65)               # L2 -> receipt
-    arr(0.62, 0.40, 0.78, 0.62)               # class -> receipt
-    # Annotation: ETTA trace backflow
-    ax.annotate("trace-projected\nfeedback", xy=(0.52, 0.67), xytext=(0.36, 0.45),
+    arr(0.17, 0.80, 0.21, 0.80)               # input -> encoder
+    arr(0.39, 0.80, 0.45, 0.80)               # encoder -> L1
+    arr(0.56, 0.74, 0.56, 0.64)               # L1 -> L2
+    arr(0.56, 0.52, 0.56, 0.44)               # L2 -> class head
+    arr(0.67, 0.59, 0.73, 0.60)               # L2 -> receipt
+    arr(0.67, 0.38, 0.73, 0.54)               # class -> receipt
+    # Annotation: ETTA trace backflow (dashed red), pointing into Layer 2
+    ax.annotate("trace-projected\nfeedback", xy=(0.45, 0.57), xytext=(0.16, 0.40),
                 fontsize=8, ha="left", va="center",
                 arrowprops=dict(arrowstyle="->", linewidth=0.8, linestyle="--",
                                 color="#a00"))
