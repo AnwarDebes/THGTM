@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "THGTM"
+type: software
+authors:
+  - family-names: "Debes"
+    given-names: "Anwar"
+repository-code: "https://github.com/AnwarDebes/THGTM"
+license: MIT
+preferred-citation:
+  type: report
+  title: "THGTM: A Temporal Hierarchical Graph Tsetlin Machine with Echo-Trace Automata for Trajectory-Level Verification of Agentic AI"
+  authors:
+    - family-names: "Debes"
+      given-names: "Anwar"
+  year: 2026
+  url: "https://github.com/AnwarDebes/THGTM/blob/main/paper/thgtm.pdf"
