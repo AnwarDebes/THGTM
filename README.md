@@ -19,13 +19,30 @@ verification of agentic AI systems.**
 
 ---
 
-The accompanying paper is at `paper/thgtm.pdf`.
+Each automaton in a Tsetlin Machine remembers only its current state, so
+feedback at one step cannot reach a choice made a step earlier. THGTM gives
+every automaton one extra float: a fading echo of its recent state changes
+(an Echo-Trace Tsetlin Automaton, ETTA). With the trace off (`lambda = 0`)
+it is bit-exactly the vanilla TM. With it on, the machine can learn from
+sequences, pass credit between stacked layers, and check an AI agent's whole
+run instead of one tool call at a time. On a synthetic slow-roll
+data-exfiltration test, where every single step looks allowed, that check
+cuts the attack success rate from 0.687 to 0.000 while flagging 9% of benign
+runs (`results/trajectory_verification.json`). This is a v0.1 research
+prototype: a pure-NumPy reference, slow on purpose so every step can be
+inspected.
+
+▶ See this project in the film *Show Its Work*: https://youtu.be/pefnyZ-oCcM?t=1043
+
+The accompanying paper is at [`paper/thgtm.pdf`](paper/thgtm.pdf).
 
 ## Quick start
 
+Needs Python 3.9+. Run everything from the repository root.
+
 ```bash
-# Install
-pip install -e .
+# Install (numpy, scipy, matplotlib; [dev] adds pytest)
+pip install -e ".[dev]"
 
 # Run the test suite (25 tests, ~15s on CPU)
 pytest -q tests/
@@ -33,8 +50,20 @@ pytest -q tests/
 # Reproduce every paper number end-to-end (~5 minutes on CPU)
 make reproduce
 
-# Build the paper PDF
+# Build the paper PDF (needs pdflatex and bibtex)
 make paper
+```
+
+No `make` (for example on Windows)? Run the scripts directly. Each
+experiment writes its `results/<name>.json`; the last line redraws the
+figures:
+
+```bash
+python experiments/noisy_xor.py
+python experiments/temporal_xor.py
+python experiments/depth_n_parity.py
+python experiments/trajectory_verification.py
+python scripts/make_figures.py
 ```
 
 ## What's in the box
@@ -49,7 +78,7 @@ make paper
 | `tests/`                                   | 25 unit tests, all green. |
 | `experiments/noisy_xor.py`                 | Sanity: `lambda = 0` reduces to vanilla TM (clean NoisyXOR ≈ 0.97). |
 | `experiments/temporal_xor.py`              | `PAST_k` + ETTA solves delayed XOR; isolates each contribution. |
-| `experiments/depth_n_parity.py`            | Load-bearing test from HGTM's own benchmarks. |
+| `experiments/depth_n_parity.py`            | Load-bearing test from [HGTM](https://github.com/AnwarDebes/HGTM)'s own benchmarks. |
 | `experiments/trajectory_verification.py`   | Slow-roll exfiltration; per-step ASR 0.687 → trajectory ASR 0.000. |
 | `scripts/make_figures.py`                  | Builds every figure used in the paper from the results JSONs. |
 | `paper/thgtm.tex` (+ `references.bib`)     | The paper source.  Compiles with `pdflatex`. |
@@ -66,8 +95,14 @@ make paper
 | Depth-N-Parity (path=2)                 | 0.833 ± 0.118 (L=2)          | **0.919 ± 0.114** (L=2 ETTA) |
 | Slow-roll exfiltration ASR              | 0.687 ± 0.053 (per-step)     | **0.000 ± 0.000** (LTL)      |
 
-See `paper/thgtm.pdf` for the full discussion, limitations, and honest
-caveats.
+Mean ± std over seeds (5 for noisy XOR, 3 for the rest), straight from
+`results/noisy_xor.json`, `results/temporal_xor.json`,
+`results/depth_n_parity.json` and `results/trajectory_verification.json`.
+The price of the trajectory check is false positives: it flags 9.3% ± 3.4%
+of benign trajectories, against 6.3% for the per-step check.
+
+See [`paper/thgtm.pdf`](paper/thgtm.pdf) for the full discussion,
+limitations, and honest caveats.
 
 ## Honest limitations
 
@@ -75,7 +110,10 @@ This is v0.1.  We are explicit about what does and does not work:
 
 * **No convergence proof** for trace-projected feedback.
 * **Modest L≥2 uplift on depth-N parity** beyond path length 2; at
-  longer path lengths the per-layer clause budget dominates.
+  longer path lengths the per-layer clause budget dominates.  At path
+  length 3 the L=2 run without ETTA still wins (0.800 vs 0.725), and a
+  single layer with the same total clause budget scores 1.000 at path
+  lengths 2 and 3 (`results/depth_n_parity.json`).
 * **Synthetic trajectory benchmark.**  The slow-roll exfiltration
   dataset is intentionally simple.  Multi-turn AgentDojo extension
   is future work.
@@ -89,12 +127,15 @@ This is v0.1.  We are explicit about what does and does not work:
 
 ```bash
 make reproduce      # runs all four experiments, regenerates results/*.json
-make figures        # rebuilds paper/figures/*.pdf from results/*.json
-make paper          # compiles paper/thgtm.pdf
+make figures        # rebuilds paper/figures/*.{png,pdf} from results/*.json
+make paper          # compiles paper/thgtm.pdf (needs pdflatex and bibtex)
 ```
 
 Total runtime on a single CPU: ~5 minutes for `reproduce`, a few
-seconds each for `figures` and `paper`.
+seconds each for `figures` and `paper`.  `figures` and `paper` re-run
+the experiments first if their results are older than the code.  The
+Makefile calls `python3`; if your interpreter is `python`, use
+`make reproduce PYTHON=python`.
 
 ## License
 
